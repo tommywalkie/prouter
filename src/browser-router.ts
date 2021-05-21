@@ -19,13 +19,13 @@ import { routerHelper } from './helper';
 export function browserRouter(options: ProuterBrowserOptions = {}) {
   const handlers: ProuterParsedHandler[] = [];
   let listening = false;
-  let previousPath = routerHelper.getPath(options.processHashChange);
+  let previousPath = routerHelper.getPath(options.processHash);
   const subscriptors: ProuterSubscriptors = {
     navigation: []
   };
 
   const onPopState = () => {
-    const newPath = routerHelper.getPath(options.processHashChange);
+    const newPath = routerHelper.getPath(options.processHash);
     /* 'popstate' event is also triggered for 'hash' changes (in the URL),
      * ignore them if the 'processHashChange' option is not provided and if the
      * path didn't changed. */
@@ -112,7 +112,7 @@ export function browserRouter(options: ProuterBrowserOptions = {}) {
     },
 
     getPath() {
-      return routerHelper.getPath(options.processHashChange);
+      return routerHelper.getPath(options.processHash);
     },
 
     push(newPath: string) {

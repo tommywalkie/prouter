@@ -10,8 +10,8 @@ import {
 } from './entity';
 
 export const routerHelper = {
-  getPath(processHashChange = false) {
-    if (processHashChange) {
+  getPath(processHash = false) {
+    if (processHash) {
       return decodeURI(location.pathname + location.search + location.hash);
     }
     return decodeURI(location.pathname + location.search);

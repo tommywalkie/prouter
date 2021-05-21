@@ -76,6 +76,7 @@ export interface ProuterRouter {
 
 export interface ProuterBrowserOptions {
   readonly processHashChange?: boolean;
+  readonly processHash?: boolean;
 }
 
 export interface ProuterBrowserRouter extends ProuterRouter {
